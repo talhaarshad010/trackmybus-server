@@ -1,8 +1,12 @@
 require('dotenv').config();
 const admin = require('firebase-admin');
-
-const serviceAccount = JSON.parse(process.env.FIREBASE_KEY);
-
+console.log('FIREBASE_PROJECT_ID:', process.env.FIREBASE_PROJECT_ID);
+console.log('FIREBASE_CLIENT_EMAIL:', process.env.FIREBASE_CLIENT_EMAIL);
+console.log(
+  'FIREBASE_PRIVATE_KEY:',
+  process.env.FIREBASE_PRIVATE_KEY ? 'Exists' : 'Missing',
+);
+console.log('DB_URL:', process.env.DB_URL);
 admin.initializeApp({
   credential: admin.credential.cert({
     projectId: process.env.FIREBASE_PROJECT_ID,
